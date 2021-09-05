@@ -1,0 +1,21 @@
+.todo-item {
+    width: 90%;
+    display: block;
+    padding: 6px 9px;
+    overflow: hidden;
+}
+
+.todo-item:hover {
+    cursor: pointer;
+    background-color: #f8f8f8;
+}
+
+.close-btn {
+    float: right;
+    opacity: 0;
+    color: red;
+}
+
+.close-btn:hover {
+    opacity: 0.9;
+}

@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {Component} from 'react';
+import TodoList from "./TodoList"
+import {Link, Route, Redirect} from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>
+          <Link to="/" style={{textDecoration: "none"}}>todoList</Link>
+        </h1>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          <Link to="/tasks">View tasks</Link>
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+        <p>
+          <Link to="/tasks/new">Add new task</Link>
+        </p>
+        <Route path="/tasks" component={TodoList} />
+        {/* <Route exact path="/" render={()=><Redirect to="/tasks" />} /> */}
+      </div>
+    )
+  }
 }
 
 export default App;
